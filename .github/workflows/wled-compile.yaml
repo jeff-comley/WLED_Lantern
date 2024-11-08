@@ -30,12 +30,12 @@ jobs:
         cd `cat /tmp/WLEDtemp/wledfoldername`
         npm install
         echo '[env:custom_build]' >>platformio.ini
-        echo 'extends = env:nodemcuv2' >>platformio.ini
-        echo 'build_flags = ${env:nodemcuv2.build_flags} ${common.debug_flags} -D WLED_DISABLE_ESPNOW -D WLED_DISABLE_BROWNOUT_DET -D WLED_DISABLE_HUESYNC -D LEDPIN=0 -D BTNPIN=14 -D WLED_MAX_BUTTONS=4 -D DEFAULT_LED_COUNT=12 -D CLIENT_SSID='\''"THEBEARDS"'\'' -D CLIENT_PASS='\''"06529208"'\'' -D USERMOD_DHT -D USERMOD_DHT_CELSIUS -D USERMOD_AUTO_SAVE -D USERMOD_FOUR_LINE_DISPLAY -D USERMOD_ROTARY_ENCODER_UI -D USERMOD_BATTERY' >>platformio.ini
+        echo 'extends = env:esp32S3_4MB_PSRAM_S' >>platformio.ini
+        echo 'build_flags = ${env:esp32S3_4MB_PSRAM_S.build_flags} -D WLED_DISABLE_BROWNOUT_DET -D WLED_DEBUG -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D LEDPIN=41 -D DEFAULT_LED_COUNT=12 -D CLIENT_SSID='\''"THEBEARDS"'\'' -D CLIENT_PASS='\''"06529208"'\'' -D USERMOD_AUTO_SAVE -D USERMOD_ROTARY_ENCODER_UI -D USERMOD_ROTARY_ENCODER_UI -D USE_ALT_DISPlAY -D USERMOD_BATTERY -D USERMOD_RTC' >>platformio.ini
         echo 'lib_deps = ' >>platformio.ini
-        echo '  ${env:nodemcuv2.lib_deps}' >>platformio.ini
-        echo '  https://github.com/alwynallan/DHT_nonblocking' >>platformio.ini
+        echo '  ${env:esp32S3_4MB_PSRAM_S.lib_deps}' >>platformio.ini
         echo '  olikraus/U8g2 @ ^2.28.8' >>platformio.ini
+        echo '  Wire' >>platformio.ini
         echo '  olikraus/U8g2 @ ^2.28.8' >>platformio.ini
         echo '  Wire' >>platformio.ini
         
