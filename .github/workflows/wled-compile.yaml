@@ -29,7 +29,7 @@ jobs:
         find /tmp/WLEDtemp -maxdepth 1 -mindepth 1 -name "*" -type d >> /tmp/WLEDtemp/wledfoldername
         cd `cat /tmp/WLEDtemp/wledfoldername`
         npm install
-        echo '[env:custom_build]' >>platformio.ini
+        echo '[env:adafruit_qtpy_esp32s3_n4r2]' >>platformio.ini
         echo 'extends = env:adafruit_qtpy_esp32s3_n4r2' >>platformio.ini
         echo 'build_flags = ${env:adafruit_qtpy_esp32s3_n4r2.build_flags} -D WLED_DISABLE_ESPNOW -D WLED_DISABLE_BROWNOUT_DET -D WLED_ENABLE_SIMPLE_UI -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D LEDPIN=41 -D DEFAULT_LED_COUNT=12 -D CLIENT_SSID='\''"THEBEARDS"'\'' -D CLIENT_PASS='\''"06529208"'\''' >>platformio.ini
         
